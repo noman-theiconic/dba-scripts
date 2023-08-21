@@ -4,7 +4,7 @@ SELECT
 	ag.[name] [ag_name],
 	ar.replica_server_name [replica_name],
 	d.[name] [db_name],
-	--(CASE WHEN hars.role_desc = 'PRIMARY' THEN '1. PRIMARY' WHEN hars.role_desc = 'SECONDARY' AND ar.availability_mode_desc = 'ASYNCHRONOUS_COMMIT' THEN '3. DR' WHEN hars.role_desc = 'SECONDARY' THEN '2. SECONDARY' ELSE hars.role_desc END) [replica_role],
+	(CASE WHEN hars.role_desc = 'PRIMARY' THEN '1. PRIMARY' WHEN hars.role_desc = 'SECONDARY' AND ar.availability_mode_desc = 'ASYNCHRONOUS_COMMIT' THEN '3. DR' WHEN hars.role_desc = 'SECONDARY' THEN '2. SECONDARY' ELSE hars.role_desc END) [replica_role],
 	hars.role_desc [replica_role],
 	d.[state_desc] [db_state],
 	hdrs.database_state_desc [db_ao_state],
