@@ -1,3 +1,4 @@
+-- Adding comments 1
 ;WITH UpTime AS
 			(
 			SELECT DATEDIFF(SECOND,create_date,GETDATE()) [upTime_secs]
