@@ -1,3 +1,4 @@
+-- Comments 1
 SELECT 
 	(SELECT hc.cluster_name FROM sys.dm_hadr_cluster hc) [cluster_name],
 	@@SERVICENAME [instance_name],
